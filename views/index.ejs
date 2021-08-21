@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/a8b70d4fae.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="/styles.css" />
+
+    <title>Trek and halt</title>
+  </head>
+  <body>
+    <!-- Birds -->
+    <div class="containerForBirds">
+      <div class="bird-container bird-container--one">
+        <div class="bird bird--one"></div>
+      </div>
+      <div class="bird-container bird-container--two">
+        <div class="bird bird--two"></div>
+      </div>
+      <div class="bird-container bird-container--three">
+        <div class="bird bird--three"></div>
+      </div>
+      <div class="bird-container bird-container--four">
+        <div class="bird bird--four"></div>
+      </div>
+    </div>
+
+    <!-- Navbar, logo and title -->
+    <section id="title">
+      <!-- Background Image -->
+      <div class="background_image">
+        <div class="title_container">
+          <h1>
+            <span>If you are looking for peace, nature is the answer</span>
+          </h1>
+        </div>
+
+        <!-- Nav bar -->
+        <header>
+          <div class="menu-toggle" id="hamburger">
+            <i class="fas fa-times hamburger_icon"></i>
+          </div>
+          <div class="overlay"></div>
+          <div class="nav_container">
+            <nav>
+              <a href="/" class="brand">
+                <img
+                  src="images/logo_text-removebg-preview.png"
+                  alt="TreknHalt_logo"
+                />
+              </a>
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="destinations">Destinations</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+      </div>
+    </section>
+
+    <!-- Find your Adventure (section 2) -->
+
+    <section id="findYourAdventure">
+      <h1 class="adventure_heading">Find your Adventure</h1>
+
+      <div class="adventure_container">
+        <div class="row">
+          <div class="col">
+            <div class="photo-container">
+              <img
+                src="images/cycling.jpg"
+                alt=""
+                class="cycling_image--forPhotoContainer"
+              />
+            </div>
+            <h2>Cycling</h2>
+            <div class="slide">
+              <p>
+                Give a man a fish and it will feed him for a day. Teach a man to
+                fish and it will feed him for a lifetime. Teach a man to cycle
+                and he will realize fishing is stupid and boring
+              </p>
+              <button class="draw meet adventure_hover_button">
+                More info
+              </button>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="photo-container">
+              <img
+                src="images/camping-3893587_1920.jpg"
+                alt=""
+                class="camping_image--forPhotoContainer"
+              />
+            </div>
+            <h2>Camping</h2>
+            <div class="slide">
+              <p>
+                Camping rules. Stare at the fire. Listen to the birds. Jump in
+                the lake. Read. Take a nap. Relax. Watch the sunset. Cook over
+                the fire. Breathe the fresh air.
+              </p>
+              <button class="draw meet adventure_hover_button">
+                More info
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="photo-container">
+              <img
+                src="images/laurynas-mereckas-Z2h10lcXXfU-unsplash.jpg"
+                class="bungeeJumping_image--forPhotoContainer"
+                alt=""
+              />
+            </div>
+            <h2>Bungee Jumping</h2>
+            <div class="slide">
+              <p>
+                There is a lot of adventures out there, waiting for us to live
+                them!
+              </p>
+              <button class="draw meet adventure_hover_button">
+                More info
+              </button>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="photo-container">
+              <img
+                src="images/paulo-henrique-YHQWXvo5_H0-unsplash.jpg"
+                class="motorcycle_image--forPhotoContainer"
+                alt=""
+              />
+            </div>
+            <h2>Motorcycle Rides</h2>
+            <div class="slide">
+              <p>
+                Life is not about waiting for the storms to pass. It’s about
+                learning to ride in the rain.
+              </p>
+              <button class="draw meet adventure_hover_button">
+                More info
+              </button>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="photo-container">
+              <img
+                src="images/toomas-tartes-Yizrl9N_eDA-unsplash.jpg"
+                class="hiking_image--forPhotoContainer"
+                alt=""
+              />
+            </div>
+            <h2>Hiking</h2>
+            <div class="slide">
+              <p>Hiking is the answer. Who cares what the question is</p>
+              <button class="draw meet adventure_hover_button">
+                More info
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="back">
+        <div class="button_base b07_3d_double_roll">
+          <div>See all adventures</div>
+          <div>See all adventures</div>
+          <div>See all adventures</div>
+          <div>See all adventures</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer_row">
+          <div class="footer-col footer_aboutUs">
+            <h4>About Us</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Accusantium quia atque nemo ad modi officiis iure, autem nulla
+              tenetur repellendus.
+            </p>
+            <a href="collaborator">Become a collaborator</a>
+          </div>
+
+          <div class="footer-col newsletter">
+            <h4>Newsletter</h4>
+            <p>Stay update with our latest</p>
+            <div class="form-element">
+              <input type="text" placeholder="Email" /><span
+                ><i class="fas fa-chevron-right"></i
+              ></span>
+            </div>
+          </div>
+
+          <div class="footer-col follow">
+            <h4>Follow us</h4>
+            <p>Let's be social</p>
+            <div>
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-youtube"></i>
+            </div>
+          </div>
+
+          <div class="copyright_text">
+            <p>Copyright ©2021 All rights reserved | Trek and halt</p>
+          </div>
+        </div>
+
+        <div class="move-up">
+          <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Jquery cdn -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="/index.js"></script>
+  </body>
+</html>

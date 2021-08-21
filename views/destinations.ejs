@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/a8b70d4fae.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="/destinations.css" />
+
+    <title>Destinations</title>
+  </head>
+  <body>
+    <!-- Navbar, logo and title -->
+    <section id="title">
+      <!-- Nav bar -->
+      <header>
+        <div class="menu-toggle" id="hamburger">
+          <i class="fas fa-bars hamburger_icon"></i>
+        </div>
+
+        <div class="nav_container">
+          <nav>
+            <a href="/" class="brand">
+              <img
+                src="images/logo_text-removebg-preview.png"
+                alt="TreknHalt_logo"
+              />
+            </a>
+
+            <div class="searchBar">
+              <div class="search">
+                <input
+                  type="text"
+                  class="searchTerm"
+                  placeholder="Search places to visit..."
+                />
+                <button type="submit" class="searchButton">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="dropdown">
+              <ul>
+                <li>
+                  <h2>
+                    Explore
+                    <i class="fas fa-angle-down"></i>
+                  </h2>
+                </li>
+
+                <ul class="dropdown_options">
+                  <div>
+                    <li><h3>Motorcycle tours</h3></li>
+                    <li><h3>Hiking</h3></li>
+                    <li><h3>Treking</h3></li>
+                    <li><h3>Cycling</h3></li>
+                  </div>
+
+                  <div>
+                    <li>
+                      <h3>Hotels</h3>
+                    </li>
+                    <li><h3>Restaurants</h3></li>
+                  </div>
+                </ul>
+              </ul>
+            </div>
+
+            <div class="logIn">
+              <h2>Log in/Sign up</h2>
+            </div>
+          </nav>
+        </div>
+      </header>
+    </section>
+
+    <div class="moreOptions">
+      <ul>
+        <div>
+          <li><h3>Motorcycle tours</h3></li>
+          <li><h3>Hiking</h3></li>
+          <li><h3>Treking</h3></li>
+          <li><h3>Cycling</h3></li>
+        </div>
+
+        <div>
+          <li>
+            <h3>Hotels</h3>
+          </li>
+          <li><h3>Restaurants</h3></li>
+        </div>
+      </ul>
+    </div>
+
+    <!-- For already existing cards and newly created cards -->
+    <section id="destination_cards">
+      <ul class="cards">
+        <li class="cards__item">
+          <div class="card">
+            <div class="cards_image">
+              <button class="rating_button">3 / 5</button>
+              <button class="all_photosButton">View all pictures</button>
+              <img
+                src="images/toomas-tartes-Yizrl9N_eDA-unsplash.jpg"
+                alt=""
+                srcset=""
+              />
+            </div>
+            <div class="card__content">
+              <div class="card__title">Hiking</div>
+              <p class="card__text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit
+                debitis consequuntur architecto in ducimus doloremque modi
+                ipsum.
+              </p>
+              <button class="btn btn--block card__btn">More info</button>
+            </div>
+          </div>
+        </li>
+        <li class="cards__item">
+          <div class="card">
+            <div class="cards_image">
+              <button class="rating_button">2 / 5</button>
+              <button class="all_photosButton">View all pictures</button>
+              <img src="images/cycling.jpg" alt="" srcset="" />
+            </div>
+            <div class="card__content">
+              <div class="card__title">Motorcycle tours</div>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore nam odio optio quos, sunt saepe voluptas laudantium
+                laboriosam quas cupiditate, quisquam
+              </p>
+              <button class="btn btn--block card__btn">More info</button>
+            </div>
+          </div>
+        </li>
+        <li class="cards__item">
+          <div class="card">
+            <div class="cards_image">
+              <button class="rating_button">4 / 5</button>
+              <button class="all_photosButton">View all pictures</button>
+
+              <img
+                src="images/laurynas-mereckas-Z2h10lcXXfU-unsplash.jpg"
+                alt=""
+                srcset=""
+              />
+            </div>
+
+            <div class="card__content">
+              <div class="card__title">lorem ipsum</div>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+                nulla earum, molestiae, delectus molestias fugit explicabo error
+                animi repellat, ad iure
+              </p>
+              <button class="btn btn--block card__btn">More info</button>
+            </div>
+          </div>
+        </li>
+        <% UploadedCards.forEach(function(card) { %>
+        <li class="cards__item">
+          <div class="card">
+            <div class="cards_image">
+              <button class="rating_button"><%= card.rating %> / 5</button>
+              <button class="all_photosButton">View all pictures</button>
+              <img
+                src="images/toomas-tartes-Yizrl9N_eDA-unsplash.jpg"
+                alt=""
+                srcset=""
+              />
+            </div>
+            <div class="card__content">
+              <div class="card__title"><%= card.title %></div>
+              <p class="card__text"><%= card.description %></p>
+              <button class="btn btn--block card__btn">More info</button>
+            </div>
+          </div>
+        </li>
+        <% }); %>
+      </ul>
+    </section>
+
+    <div class="filters"></div>
+
+    <!-- Jquery cdn -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="/destination.js"></script>
+  </body>
+</html>
