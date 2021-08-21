@@ -1,0 +1,1143 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ea005e;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+}
+
+/* Downloaded fonts */
+
+@font-face {
+  font-family: "aspiredemibold";
+  src: url("fonts/aspire_demibold/aspiredemibold-yaao-webfont.woff2")
+      format("woff2"),
+    url("fonts/aspire_demibold/aspiredemibold-yaao-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "bernardo_moda_contrastregular";
+  src: url("fonts/bernardo_moda_contrast_regular/bernardo_moda_contrast-webfont.woff2")
+      format("woff2"),
+    url("fonts/bernardo_moda_contrast_regular/bernardo_moda_contrast-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Navbar, logo and title */
+
+.background_image {
+  background-image: url("images/mountains_edited.jpg");
+  background-position: center;
+  overflow: hidden;
+  background-size: cover;
+  height: 730px;
+  position: relative;
+  background-repeat: no-repeat;
+  z-index: 100;
+}
+
+.background_image::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 10;
+  background: linear-gradient(to top, #281324, transparent);
+}
+
+.title_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  text-align: center;
+  color: black;
+  font-weight: 700;
+  padding-top: 10em;
+}
+
+.title_container h1 span {
+  border: 10px solid #f1f1f1;
+  border-style: double;
+  width: 100%;
+  padding: 10px 20px;
+  display: inline-block;
+  font-family: "bernardo_moda_contrastregular";
+  font-size: 5.5rem;
+  letter-spacing: 1px;
+  line-height: 5.5rem;
+}
+
+/* Navigation bar */
+
+header {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.nav_container {
+  max-width: 120rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.menu-toggle {
+  position: absolute;
+  top: 3rem;
+  right: 2.5rem;
+  color: #000;
+  font-size: 3rem;
+  cursor: pointer;
+  z-index: 100;
+  display: none;
+}
+
+nav {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  z-index: 1000;
+}
+
+.brand {
+  width: 18rem;
+  transform: translateX(-100rem);
+  animation: slideIn 0.5s forwards;
+  padding-bottom: 18px;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  list-style: none;
+  transform: translateX(100rem);
+  animation: slideIn 0.5s forwards;
+}
+
+nav ul li:nth-child(1) {
+  animation-delay: 0s;
+}
+
+nav ul li:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+nav ul li:nth-child(3) {
+  animation-delay: 1s;
+}
+
+nav ul li:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+nav ul li a {
+  padding: 0.2rem 0;
+  margin: 0 3rem;
+  position: relative;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+}
+
+nav ul li a:hover {
+  color: black;
+}
+
+nav ul li a:last-child {
+  margin-right: 0;
+}
+
+nav ul li a::before,
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: crimson;
+  left: 0;
+  transform: scaleX(0);
+  transition: all 0.5s;
+}
+
+nav ul li a::before {
+  top: 0;
+  transform-origin: left;
+}
+
+nav ul li a::after {
+  bottom: 0;
+  transform-origin: right;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.95);
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transition: opacity 650ms;
+  transform: scale(0);
+  opacity: 0;
+  display: none;
+}
+
+nav ul li a:hover::before,
+nav ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+@keyframes slideIn {
+  from {
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.title_container_after_the_navBar_is_collapsed {
+  position: absolute;
+  top: 30%;
+}
+
+/* Birds */
+
+.containerForBirds {
+  min-height: 10rem;
+  z-index: 1000;
+  position: absolute;
+  overflow: hidden;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-position: center center;
+  padding: 2rem;
+  background-color: transparent;
+  height: max-content;
+  top: 8em;
+  width: 100%;
+}
+
+.bird {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg);
+  background-size: auto 100%;
+  width: 88px;
+  height: 125px;
+  will-change: background-position;
+  animation-name: fly-cycle;
+  animation-timing-function: steps(10);
+  animation-iteration-count: infinite;
+}
+.bird--one {
+  animation-duration: 1s;
+  animation-delay: -0.5s;
+}
+.bird--two {
+  animation-duration: 0.9s;
+  animation-delay: -0.75s;
+}
+.bird--three {
+  animation-duration: 1.25s;
+  animation-delay: -0.25s;
+}
+.bird--four {
+  animation-duration: 1.1s;
+  animation-delay: -0.5s;
+}
+.bird-container {
+  position: absolute;
+  /* top: 20%; */
+  top: 0;
+  bottom: 500px;
+  left: -10%;
+  transform: scale(0) translateX(-10vw);
+  will-change: transform;
+  animation-name: fly-right-one;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.bird-container--one {
+  animation-duration: 9s;
+  animation-delay: 0;
+}
+.bird-container--two {
+  animation-duration: 9s;
+  animation-delay: 1s;
+}
+.bird-container--three {
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+.bird-container--four {
+  animation-duration: 8s;
+  animation-delay: 3s;
+}
+
+@keyframes fly-cycle {
+  100% {
+    background-position: -900px 0;
+  }
+}
+
+@keyframes fly-right-one {
+  0% {
+    transform: scale(0.3) translateX(-10vw);
+  }
+  10% {
+    transform: translateY(2vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    transform: translateY(0vh) translateX(30vw) scale(0.5);
+  }
+  30% {
+    transform: translateY(4vh) translateX(50vw) scale(0.6);
+  }
+  40% {
+    transform: translateY(2vh) translateX(70vw) scale(0.6);
+  }
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.6);
+  }
+  60% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+}
+
+@keyframes fly-right-two {
+  0% {
+    transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+  }
+  10% {
+    transform: translateY(0vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    transform: translateY(-4vh) translateX(30vw) scale(0.6);
+  }
+  30% {
+    transform: translateY(1vh) translateX(50vw) scale(0.45);
+  }
+  40% {
+    transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+  }
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.45);
+  }
+  51% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+}
+
+/* Media queries for section one (for mobile) */
+@media only screen and (max-width: 960px) {
+  .containerForBirds {
+    min-height: 10rem;
+    top: 13.6em;
+  }
+
+  .title_container {
+    padding: 3em 2em;
+    left: 50%;
+    margin-top: 4em;
+    width: 100%;
+  }
+
+  .title_container h1 span {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  .brand {
+    margin-top: 2em;
+  }
+  .brand img {
+    width: 15rem;
+  }
+
+  nav {
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    right: 50%;
+    top: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  nav ul li a {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.9rem;
+
+    right: 5%;
+    z-index: 100;
+    position: absolute;
+  }
+}
+
+/* Media queries for extremly small mobile screens (for section one) */
+@media only screen and (min-width: 200px) and (max-width: 320px) {
+  .title_container {
+    margin-top: 7em;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.4rem;
+    position: absolute;
+    right: 90%;
+    margin-top: 5px;
+  }
+}
+
+/* Media queries for section 1 (for tablet)  */
+@media only screen and (min-width: 960px) and (max-width: 1060px) {
+  .brand {
+    margin-top: 2em;
+    padding: 0;
+  }
+
+  nav ul {
+    margin-bottom: 0;
+    padding-left: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav ul li a {
+    font-size: 1.2rem;
+    padding: 0;
+  }
+}
+
+/* Find your Adventure (Section 2) */
+
+#findYourAdventure {
+  margin-top: 8em;
+}
+
+.adventure_heading {
+  font-size: 3rem;
+  font-weight: bolder;
+  font-family: "Rubik", sans-serif;
+  text-align: center;
+}
+
+.adventure_container {
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 90%;
+}
+
+.row {
+  display: flex;
+}
+
+.col {
+  color: #000;
+  flex: 1 1 auto;
+  min-height: 200px;
+  height: 260px;
+  position: relative;
+}
+
+.col h2 {
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 1.25;
+  margin: 0;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1;
+}
+
+.col:nth-child(2) {
+  min-width: 20%;
+}
+
+.col:nth-child(4) {
+  min-width: 33%;
+}
+
+.col:nth-child(3) + .col:nth-child(3) {
+  min-width: 50%;
+}
+
+.photo-container {
+  background: #0f0523 50% 50% / cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: 1s;
+  transform-origin: bottom right;
+  display: flex;
+  align-items: flex-end;
+}
+
+.cycling_image--forPhotoContainer {
+  top: 50px;
+  position: relative;
+}
+
+.motorcycle_image--forPhotoContainer {
+  align-self: flex-start;
+  position: relative;
+  top: -100px;
+}
+
+.hiking_image--forPhotoContainer {
+  align-self: flex-start;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.bungeeJumping_image--forPhotoContainer {
+  align-self: flex-start;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.photo-container::before {
+  background: rgb(247, 253, 4);
+  background: linear-gradient(
+    178deg,
+    rgba(247, 253, 4, 0.08196782130821079) 100%,
+    rgba(247, 253, 4, 1) 100%
+  );
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.col:hover .photo-container {
+  transform: scale(1.25);
+}
+
+.slide {
+  background: rgb(153, 21, 78);
+  background: linear-gradient(
+    167deg,
+    rgba(21, 149, 153, 0.69) 100%,
+    rgb(21, 149, 153) 100%
+  );
+  padding: 0 1.5rem;
+}
+
+.slide p {
+  font-size: 1.4rem;
+  padding-top: 1rem;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+}
+
+.adventure_hover_button {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  margin: 1.3em 1em;
+  padding: 0.7em 1.4em;
+  box-shadow: inset 0 0 0 2px #000;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 800;
+  position: relative;
+  vertical-align: middle;
+}
+
+.adventure_hover_button::before,
+.adventure_hover_button::after {
+  box-sizing: inherit;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.draw {
+  transition: color 0.25s;
+}
+.draw::before,
+.draw::after {
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+.draw::before {
+  top: 0;
+  left: 0;
+}
+.draw::after {
+  bottom: 0;
+  right: 0;
+}
+.draw:hover {
+  color: #60daaa;
+}
+.draw:hover::before,
+.draw:hover::after {
+  width: 100%;
+  height: 100%;
+}
+.draw:hover::before {
+  border-top-color: #60daaa;
+  border-right-color: #60daaa;
+  transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+.draw:hover::after {
+  border-bottom-color: #60daaa;
+  border-left-color: #60daaa;
+  transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s,
+    height 0.25s ease-out 0.75s;
+}
+
+.meet:hover {
+  color: #fbca67;
+}
+.meet::after {
+  top: 0;
+  left: 0;
+}
+.meet:hover::before {
+  border-top-color: #fbca67;
+  border-right-color: #fbca67;
+}
+.meet:hover::after {
+  border-bottom-color: #fbca67;
+  border-left-color: #fbca67;
+  transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
+}
+
+/* The magic for section 2*/
+.col {
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /*
+  	  Visibility delay gives the previously hovered element time to slide out before disappearing.
+  	  Remove the `visibility` transition to slide in current element without sliding out previous element
+  	*/
+  transition: all 0.275s ease-in-out, visibility 0s 0.275s;
+  visibility: hidden;
+  will-change: transform;
+  transform: translateY(100%);
+}
+
+.row:hover ~ .row .slide {
+  transform: translateY(-100%);
+}
+.row:hover .slide {
+  transform: translateX(100%);
+}
+.row:hover .col:hover ~ .col .slide {
+  transform: translateX(-100%);
+}
+.row:hover .col:hover .slide {
+  transform: none;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.back {
+  position: relative;
+  padding: 3em;
+}
+
+.button_base {
+  margin: 0;
+  border: 0;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -100px;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  cursor: default;
+}
+
+.button_base:hover {
+  cursor: pointer;
+}
+
+.b07_3d_double_roll {
+  perspective: 500px;
+  -webkit-perspective: 500px;
+  -moz-perspective: 500px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.b07_3d_double_roll div {
+  position: absolute;
+  text-align: center;
+  padding: 10px;
+  border: #000000 solid 1px;
+  pointer-events: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.b07_3d_double_roll div:nth-child(1) {
+  color: #000000;
+  background-color: #ffffff;
+  z-index: 0;
+  width: 100%;
+  height: 50px;
+  clip: rect(0px, 100px, 50px, 0px);
+  position: absolute;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform-origin: 50% 50% -25px;
+  -webkit-transform-origin: 50% 50% -25px;
+  -moz-transform-origin: 50% 50% -25px;
+}
+
+.b07_3d_double_roll div:nth-child(2) {
+  color: #000000;
+  background-color: #000000;
+  z-index: -1;
+  width: 100%;
+  height: 50px;
+  clip: rect(0px, 100px, 50px, 0px);
+  position: absolute;
+  transform: rotateX(90deg);
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transform-origin: 50% 50% -25px;
+  -webkit-transform-origin: 50% 50% -25px;
+  -moz-transform-origin: 50% 50% -25px;
+}
+
+.b07_3d_double_roll div:nth-child(3) {
+  color: #000000;
+  background-color: #ffffff;
+  z-index: 0;
+  width: 100%;
+  height: 50px;
+  clip: rect(0px, 200px, 50px, 100px);
+  position: absolute;
+  transition: all 0.2s ease 0.1s;
+  -webkit-transition: all 0.2s ease 0.1s;
+  -moz-transition: all 0.2s ease 0.1s;
+  transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform-origin: 50% 50% -25px;
+  -webkit-transform-origin: 50% 50% -25px;
+  -moz-transform-origin: 50% 50% -25px;
+}
+
+.b07_3d_double_roll div:nth-child(4) {
+  color: #000000;
+  background-color: #000000;
+  z-index: -1;
+  width: 100%;
+  height: 50px;
+  clip: rect(0px, 200px, 50px, 100px);
+  position: absolute;
+  transform: rotateX(-90deg);
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transition: all 0.2s ease 0.1s;
+  -webkit-transition: all 0.2s ease 0.1s;
+  -moz-transition: all 0.2s ease 0.1s;
+  transform-origin: 50% 50% -25px;
+  -webkit-transform-origin: 50% 50% -25px;
+  -moz-transform-origin: 50% 50% -25px;
+}
+
+.b07_3d_double_roll:hover div:nth-child(1) {
+  background-color: #000000;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transform: rotateX(-90deg);
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+}
+
+.b07_3d_double_roll:hover div:nth-child(2) {
+  color: #ffffff;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+}
+
+.b07_3d_double_roll:hover div:nth-child(3) {
+  background-color: #000000;
+  transition: all 0.2s ease 0.1s;
+  -webkit-transition: all 0.2s ease 0.1s;
+  -moz-transition: all 0.2s ease 0.1s;
+  transform: rotateX(90deg);
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+}
+
+.b07_3d_double_roll:hover div:nth-child(4) {
+  color: #ffffff;
+  transition: all 0.2s ease 0.1s;
+  -webkit-transition: all 0.2s ease 0.1s;
+  -moz-transition: all 0.2s ease 0.1s;
+  transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+}
+
+/* Media queries for findYourAdventure section (for mobile) */
+
+@media only screen and (max-width: 860px) {
+  #findYourAdventure {
+    margin-top: 5em;
+  }
+
+  .adventure_heading {
+    font-size: 2rem;
+  }
+
+  .adventure_container {
+    width: 100%;
+    padding: 2rem 0;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col {
+    margin-bottom: 0.5em;
+    display: flex;
+  }
+
+  .col h2 {
+    font-weight: 500;
+  }
+
+  .photo-container img {
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .slide p {
+    font-size: 1.1rem;
+    line-height: 1.45rem;
+    font-weight: 300;
+    letter-spacing: 0.6px;
+  }
+
+  .adventure_hover_button {
+    font-size: 0.8rem;
+  }
+}
+
+/* Media queries for findYourAdventure section (for tablets) */
+@media only screen and (min-width: 860px) and (max-width: 1140px) {
+  .adventure_container {
+    width: 100%;
+    padding: 2em 0;
+  }
+
+  .col h2 {
+    font-weight: 500;
+  }
+
+  .photo-container {
+    align-items: flex-start;
+  }
+
+  .cycling_image--forPhotoContainer {
+    align-self: flex-start;
+    top: 0;
+  }
+
+  .camping_image--forPhotoContainer {
+    align-self: flex-end;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+  .motorcycle_image--forPhotoContainer {
+    align-self: flex-start;
+    top: -60px;
+  }
+
+  .hiking_image--forPhotoContainer {
+    align-self: flex-start;
+    position: relative;
+  }
+
+  .bungeeJumping_image--forPhotoContainer {
+    align-self: flex-start;
+    position: relative;
+  }
+
+  .slide p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    letter-spacing: 0.6px;
+  }
+
+  .adventure_hover_button {
+    font-size: 0.9rem;
+  }
+}
+
+/* Footer */
+
+.footer_row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer {
+  background-color: #1a1c20;
+  padding: 70px 0;
+  padding-bottom: 0;
+  margin-top: 70px;
+}
+
+.footer-col {
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-col p,
+a {
+  z-index: 1;
+  color: #999;
+  text-align: left;
+  font-family: "Rubik", sans-serif;
+  line-height: 20px;
+  padding-bottom: 10px;
+}
+
+.footer-col h4 {
+  font-size: 22px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 24px;
+  font-weight: 500;
+  position: relative;
+  text-align: left;
+}
+
+.footer-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 75px;
+}
+
+.newsletter .form-element {
+  background: black;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.newsletter .form-element input {
+  padding: 0.5rem 0.7rem;
+  border: none;
+  background: transparent;
+  color: white;
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  width: 74%;
+}
+
+.newsletter .form-element span {
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+}
+
+.follow div i {
+  color: #fff;
+  margin-top: 10px;
+  padding-right: 10px;
+}
+
+.copyright_text {
+  width: 100%;
+  background-color: #181818;
+  padding: 14px 100px;
+  text-align: center;
+  margin-top: 4em;
+}
+
+.copyright_text p {
+  color: #d8e3e7;
+}
+
+.footer .move-up {
+  position: absolute;
+  width: auto;
+  top: 1750px;
+  left: 1450px;
+}
+
+.footer .move-up span {
+  color: #104f55;
+}
+
+.footer .move-up span:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Media queries for footer  (for mobile) */
+@media only screen and (max-width: 860px) {
+  .footer-col {
+    width: 70%;
+    margin-bottom: 2rem;
+  }
+
+  .newsletter {
+    display: none;
+  }
+
+  .footer .move-up {
+    display: none;
+  }
+
+  .copyright_text {
+    width: 100%;
+    margin-top: 2em;
+    padding: 14px 40px;
+  }
+}
+
+/* Media queries for footer (for tablets) */
+@media only screen and (min-width: 860px) and (max-width: 1140px) {
+  .newsletter .form-element {
+    display: inline-block;
+  }
+
+  .footer .move-up {
+    display: none;
+  }
+}

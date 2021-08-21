@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/collaborator.css" />
+    <title>Collaboration page</title>
+  </head>
+  <body>
+    <form action="/destinations" class="collaborator_form" method="POST">
+      <label for="trek_name">Trek name</label>
+      <input type="text" id="trek_name" name="title" required />
+
+      <label for="description">Description</label>
+      <textarea
+        id="description"
+        cols="30"
+        rows="10"
+        name="description"
+      ></textarea>
+
+      <label for="rating">Rating</label>
+      <input type="number" id="rating" min="1" max="5" name="rating" />
+
+      <label for="photos">Upload photos (if any)</label>
+      <input type="file" id="photos" name="photos" />
+
+      <button type="submit">Upload</button>
+      <button><a href="/">Back to home</a></button>
+    </form>
+  </body>
+</html>
