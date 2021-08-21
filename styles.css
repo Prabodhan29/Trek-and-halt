@@ -572,7 +572,7 @@ nav ul li a:hover::after{
 }
 
 .slide {
-  	background: rgb(153,21,78);
+  	background: rgb(230, 112, 163);
 	background: linear-gradient(167deg, rgba(21, 149, 153, 0.69) 100%, rgb(21, 149, 153) 100%);
   	padding: 0 1.5rem;
 }
