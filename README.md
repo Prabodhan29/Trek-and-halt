@@ -1,4 +1,3 @@
 # **Trek-and-halt**
-
-## Work in Progress, so do interrupt
+## Is now on halt
 
